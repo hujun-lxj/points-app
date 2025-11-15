@@ -1,6 +1,6 @@
 // Supabase配置 - 需要替换成您的实际信息
-const supabaseUrl = 'https://您的项目.supabase.co';
-const supabaseKey = '您的anon公开密钥';
+const supabaseUrl = https://qctnrfuynjyhksaleqkj.supabase.co
+const supabaseKey = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFjdG5yZnV5bmp5aGtzYWxlcWtqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjMxNzQ2NzEsImV4cCI6MjA3ODc1MDY3MX0.Xp5ZVScsOeIUTXwvFyctJQDl2oLLbFw3_VKFRkjg3Vo
 const supabase = supabase.createClient(supabaseUrl, supabaseKey);
 
 // 页面加载完成后执行
