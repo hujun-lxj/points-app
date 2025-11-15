@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>会员积分系统</title>
+    <meta name="theme-color" content="#1890ff">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/weui@2.5.16/style/weui.min.css">
+</head>
+<body>
+    <div id="app" class="weui-tab">
+        <div class="weui-tab__panel">
+            <!-- 用户信息卡片 -->
+            <div class="user-card weui-panel weui-panel_access">
+                <div class="weui-panel__hd">我的积分</div>
+                <div class="weui-panel__bd">
+                    <div class="weui-media-box weui-media-box_appmsg">
+                        <div class="weui-media-box__hd">
+                            <span style="font-size:40px;">👤</span>
+                        </div>
+                        <div class="weui-media-box__bd">
+                            <h4 class="weui-media-box__title" id="userName">加载中...</h4>
+                            <p class="weui-media-box__desc" id="userId"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 积分数据 -->
+            <div class="points-data weui-grids">
+                <div class="weui-grid">
+                    <div class="weui-grid__icon">
+                        <span style="font-size:24px;">📊</span>
+                    </div>
+                    <p class="weui-grid__label">
+                        <span id="totalPoints">0</span>
+                        <br>总积分
+                    </p>
+                </div>
+                <div class="weui-grid">
+                    <div class="weui-grid__icon">
+                        <span style="font-size:24px;">💰</span>
+                    </div>
+                    <p class="weui-grid__label">
+                        <span id="withdrawable">0</span>
+                        <br>可提现
+                    </p>
+                </div>
+                <div class="weui-grid">
+                    <div class="weui-grid__icon">
+                        <span style="font-size:24px;">⭐</span>
+                    </div>
+                    <p class="weui-grid__label">
+                        <span id="userLevel">0</span>
+                        <br>会员等级
+                    </p>
+                </div>
+            </div>
+
+            <!-- 进度展示 -->
+            <div class="progress-section weui-panel">
+                <div class="weui-panel__hd">释放进度</div>
+                <div class="weui-panel__bd">
+                    <div class="weui-progress">
+                        <div class="weui-progress__bar">
+                            <div class="weui-progress__inner-bar" id="progressBar" style="width: 0%"></div>
+                        </div>
+                        <div class="weui-progress__opr">
+                            <span id="progressText">0%</span>
+                        </div>
+                    </div>
+                    <div class="progress-desc">
+                        <p>已释放: <span id="releasedAmount">0</span> / <span id="totalRelease">0</span></p>
+                        <p class="small-text">每日释放总积分的0.3%</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 积分记录 -->
+            <div class="records-section weui-panel">
+                <div class="weui-panel__hd">最近记录</div>
+                <div class="weui-panel__bd">
+                    <div id="recordsList" class="records-list">
+                        <div class="weui-loadmore weui-loadmore_line">
+                            <span class="weui-loadmore__tips">加载中...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 底部导航 -->
+        <div class="weui-tabbar">
+            <a href="javascript:void(0)" class="weui-tabbar__item weui-bar__item_on">
+                <span style="font-size:24px;">🏠</span>
+                <p class="weui-tabbar__label">首页</p>
+            </a>
+            <a href="javascript:void(0)" class="weui-tabbar__item" onclick="showRecords()">
+                <span style="font-size:24px;">📝</span>
+                <p class="weui-tabbar__label">记录</p>
+            </a>
+            <a href="javascript:void(0)" class="weui-tabbar__item" onclick="showShare()">
+                <span style="font-size:24px;">🔗</span>
+                <p class="weui-tabbar__label">分享</p>
+            </a>
+        </div>
+    </div>
+
+    <!-- 分享面板 -->
+    <div id="sharePanel" class="weui-actionsheet">
+        <div class="weui-actionsheet__menu">
+            <div class="weui-actionsheet__cell" onclick="copyLink()">复制链接</div>
+            <div class="weui-actionsheet__cell" onclick="showQRCode()">生成二维码</div>
+        </div>
+        <div class="weui-actionsheet__action">
+            <div class="weui-actionsheet__cell" onclick="hideShare()">取消</div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

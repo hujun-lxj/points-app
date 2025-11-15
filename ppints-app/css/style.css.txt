@@ -1,0 +1,125 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+}
+
+.weui-tab {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.weui-tab__panel {
+    flex: 1;
+    overflow-y: auto;
+    padding-bottom: 50px;
+}
+
+.user-card {
+    margin: 15px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+}
+
+.points-data {
+    margin: 15px;
+    background: white;
+    border-radius: 12px;
+    padding: 15px 0;
+}
+
+.points-data .weui-grid {
+    padding: 10px 0;
+}
+
+.points-data .weui-grid__label {
+    font-size: 14px;
+    color: #666;
+}
+
+.points-data .weui-grid__label span {
+    font-size: 20px;
+    font-weight: bold;
+    color: #1890ff;
+}
+
+.progress-section, .records-section {
+    margin: 15px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+}
+
+.progress-desc {
+    padding: 15px;
+    text-align: center;
+}
+
+.progress-desc p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.small-text {
+    font-size: 12px;
+    color: #999;
+}
+
+.records-list {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.record-item {
+    padding: 12px 15px;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.record-item:last-child {
+    border-bottom: none;
+}
+
+.record-type {
+    font-size: 14px;
+    color: #333;
+}
+
+.record-amount {
+    font-weight: bold;
+}
+
+.record-amount.positive {
+    color: #07c160;
+}
+
+.record-amount.negative {
+    color: #fa5151;
+}
+
+.record-time {
+    font-size: 12px;
+    color: #999;
+    margin-top: 4px;
+}
+
+.weui-actionsheet {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    transform: translateY(100%);
+    transition: transform 0.3s;
+}
+
+.weui-actionsheet__toggle {
+    transform: translateY(0);
+}
+
+.loading {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+}
